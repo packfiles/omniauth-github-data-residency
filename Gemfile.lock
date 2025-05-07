@@ -167,10 +167,10 @@ DEPENDENCIES
   omniauth-github-data-residency!
   rack-test
   rake (~> 13.0)
-  rspec (~> 3.0)
+  rspec (~> 3.13)
   ruby-lsp
   simplecov
-  standard (~> 1.3)
+  standard
   webmock
 
 BUNDLED WITH
