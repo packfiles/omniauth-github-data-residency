@@ -60,4 +60,3 @@ module OmniAuth
 end
 
 OmniAuth.config.add_camelization "github_data_residency", "GitHubDataResidency"
-

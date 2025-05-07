@@ -140,4 +140,3 @@ RSpec.describe OmniAuth::Strategies::GitHubDataResidency do
     end
   end
 end
-
