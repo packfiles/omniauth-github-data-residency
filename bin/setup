@@ -1,8 +1,38 @@
 #!/usr/bin/env bash
 set -euo pipefail
 IFS=$'\n\t'
-set -vx
+#set -vx
 
+INFO_ANSI_COLOR="86"
+WARN_ANSI_COLOR="192"
+ERROR_ANSI_COLOR="204"
+
+INFO_COLOR_SET="\e[38;5;${INFO_ANSI_COLOR}m"
+WARN_COLOR_SET="\e[38;5;${WARN_ANSI_COLOR}m"
+ERROR_COLOR_SET="\e[38;5;${ERROR_ANSI_COLOR}m"
+COLOR_RESET="\e[39m"
+
+# Install mise and dependencies
+if command -v mise &> /dev/null; then
+    printf "${INFO_COLOR_SET}INFO${COLOR_RESET} mise found! Checking for mise updates...\n"
+    if error_output=$(mise self-update --yes 2>&1); then
+      printf "${INFO_COLOR_SET}INFO${COLOR_RESET} mise update complete!\n"
+    else
+      printf "${ERROR_COLOR_SET}ERROR${COLOR_RESET} mise self-update returned an error:\n$error_output.\n"
+      printf "${INFO_COLOR_SET}INFO${COLOR_RESET} If you installed mise by using a package manager, the error is expected.\n"
+    fi
+    printf "${INFO_COLOR_SET}INFO${COLOR_RESET} Using mise to install dependencies...\n"
+    mise install
+elif command -v asdf &> /dev/null; then
+  printf "${WARN_COLOR_SET}WARNING${COLOR_RESET} asdf found, but not supported for installing dependencies! For more information, see doc/setup.md.\n"
+else
+  printf "${WARN_COLOR_SET}WARNING${COLOR_RESET} mise not found! For more information, see doc/setup.md.\n"
+fi
+
+# Install gems
 bundle install
+
+# Install git hooks with lefthook
+bundle exec lefthook install
 
 # Do any other automated setup that you need to do here
