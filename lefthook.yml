@@ -1,0 +1,6 @@
+pre-commit: 
+  parallel: true
+  jobs: 
+    - name: lint-ruby-files
+      glob: "*.rb"
+      run: bundle exec standard --fix {staged_files}
