@@ -1,0 +1,25 @@
+# For all options, see <https://lychee.cli.rs/usage/config/>
+
+# Accept 200 (OK) and 403 (Forbidden) responses as valid
+accept = [
+  "200",
+  "403"
+]
+
+# Exclude links
+exclude = [
+  'https://github.com/packfiles/',
+  'https://github.com/settings/developers',
+  'https://ghe.com',
+  'https://*.ghe.com'
+]
+
+# Don't check any links to private addresses
+exclude_private = true
+
+# Avoid rate limits by limiting concurrency of checks
+max_concurrency = 2
+
+# Redirected links can eventually become broken links
+max_redirects = 0
+
