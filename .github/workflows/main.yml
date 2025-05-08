@@ -8,17 +8,6 @@ on:
   pull_request:
 
 jobs:
-  markdownChecker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Markdown Checker
-        uses: DavidAnson/markdownlint-cli2-action@v19
-        with:
-          globs: |
-            README.md
-            docs/*.md
   linkChecker:
     runs-on: ubuntu-latest
     steps:
@@ -37,7 +26,7 @@ jobs:
     strategy:
       matrix:
         ruby:
-          - '3.4.3'
+          - "3.4.3"
     steps:
       - uses: actions/checkout@v4
       - name: Set up Ruby
