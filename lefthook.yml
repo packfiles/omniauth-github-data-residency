@@ -3,4 +3,5 @@ pre-commit:
   jobs: 
     - name: lint-ruby-files
       glob: "*.rb"
-      run: bundle exec standard --fix {staged_files}
+      run: bundle exec standardrb --fix {staged_files}
+
