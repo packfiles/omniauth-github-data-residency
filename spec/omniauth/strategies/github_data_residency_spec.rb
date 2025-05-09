@@ -1,6 +1,6 @@
 require "omniauth/strategies/github_data_residency"
 
-RSpec.describe OmniAuth::Strategies::GitHubDataResidency do
+RSpec.describe OmniAuth::Strategies::GithubDataResidency do
   let(:access_token) { instance_double("AccessToken", :options => {}, :[] => "user") }
   let(:app) { lambda { |_env| [200, {}, ["Hello."]] } }
   let(:enterprise_subdomain) { "example-corp" }
@@ -60,7 +60,7 @@ RSpec.describe OmniAuth::Strategies::GitHubDataResidency do
 
     it "ensures client options are updated before proceeding" do
       # Create a custom test implementation of request_phase that simply returns an observable result
-      test_implementation = Class.new(OmniAuth::Strategies::GitHubDataResidency) do
+      test_implementation = Class.new(OmniAuth::Strategies::GithubDataResidency) do
         def custom_request_phase_test
           # Call the original request_phase
           request_phase
@@ -93,7 +93,7 @@ RSpec.describe OmniAuth::Strategies::GitHubDataResidency do
 
     it "ensures client options are updated before proceeding" do
       # Create a custom test implementation of callback_phase that simply returns an observable result
-      test_implementation = Class.new(OmniAuth::Strategies::GitHubDataResidency) do
+      test_implementation = Class.new(OmniAuth::Strategies::GithubDataResidency) do
         def custom_callback_phase_test
           # Call the original callback_phase
           callback_phase
