@@ -1,4 +1,4 @@
-require "omniauth/strategies/github"
+require "omniauth-github"
 
 module OmniAuth
   module Strategies
