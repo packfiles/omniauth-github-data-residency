@@ -2,7 +2,7 @@ require "omniauth-github"
 
 module OmniAuth
   module Strategies
-    class GithubDataResidency < OmniAuth::Strategies::GitHub
+    class Githubdr < OmniAuth::Strategies::GitHub
       # The enterprise subdomain is used to build the client_options urls for the GitHub Enterprise with Data Residency OAuth API
       # The enterprise_subdomain is required to be set in the request params for the GitHubDR strategy to work
       option :enterprise_options, {
@@ -59,4 +59,4 @@ module OmniAuth
   end
 end
 
-OmniAuth.config.add_camelization "github_data_residency", "GithubDataResidency"
+OmniAuth.config.add_camelization "githubdr", "Githubdr"

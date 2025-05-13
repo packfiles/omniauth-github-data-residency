@@ -1,5 +1,5 @@
 module OmniAuth
-  module GithubDataResidency
-    VERSION = "0.0.1"
+  module Githubdr
+    VERSION = "0.0.2"
   end
 end

@@ -46,7 +46,7 @@ This is useful if you need to pull the subdomain from a request.
 ### Basic Rails Usage with Devise
 
 ```ruby
-config.omniauth :githubdr, ENV['GITHUB_CLIENT_ID'], ENV['GITHUB_CLIENT_SECRET'], scope: "user:email,read:user", enterprise_options: {enterprise_subdomain: "my-domain"}
+config.omniauth :githubdr, ENV['GITHUB_ENTERPRISE_CLIENT_ID'], ENV['GITHUB_ENTERPRISE_CLIENT_SECRET'], scope: "user:email,read:user", setup: SETUP_PROC
 ```
 
 ### Side-by-side Usage in Rails with Devise

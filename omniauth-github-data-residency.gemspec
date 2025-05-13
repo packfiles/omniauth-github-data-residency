@@ -4,7 +4,7 @@ require_relative "lib/omniauth-github-data-residency/version"
 
 Gem::Specification.new do |spec|
   spec.name = "omniauth-github-data-residency"
-  spec.version = OmniAuth::GithubDataResidency::VERSION
+  spec.version = OmniAuth::Githubdr::VERSION
   spec.authors = ["Packfiles"]
   spec.email = ["hello@packfiles.io"]
 

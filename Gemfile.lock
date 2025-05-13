@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-github-data-residency (0.0.1)
+    omniauth-github-data-residency (0.0.2)
       omniauth-github (~> 2.0, >= 2.0.1)
 
 GEM
